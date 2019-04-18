@@ -303,6 +303,17 @@ template {
 [hidden] {
   display: none; }
 
+* {
+  box-sizing: border-box; }
+
+ul {
+  list-style-type: none; }
+
+p {
+  font-size: 1em;
+  line-height: 1.5;
+  color: #444; }
+
 .grid__row {
   padding: 1em 10px;
   display: flex;
@@ -398,5 +409,15 @@ template {
 @media (min-width: 768px) {
   [class^=grid__col] + [class^=grid__col] {
     margin-left: 10px; } }
+
+/* Button styling 
+
+    .btn--default
+    .btn--success
+    .btn--error
+    .btn--warning
+    .btn--info
+    .theme__colors
+    */
 
 /*# sourceMappingURL=styles.css.map */
