@@ -4,6 +4,54 @@ $primary-font: 'Lato', sans-serif;
 
 
 //BREAKPOINTS
+$brk-mobile: 425px;
+$brk-tablet: 768px;
+$brk-desktop: 1024px;
+$max-width: 1024px;
+
+//COLOR DECLARATIONS
+$lime-green: rgb(45, 217, 179);
+$dark-gray: #444444;
+$cyan: #63cebd;
+$emerald: #50c878;
+$bright-pink: rgb(228, 62, 111);
+$tomato: #ff6347;
+$magenta: #9a009a;
+$soft-blue: #9bded5;
+$pure-blue: #0076ec;
+$soft-purple: #c299c2;
+$pink: #c299c2;
+$soft-orange: #FF7E47;
+
 //PRIMARY COLORS
-//GRID COLORS
+$primary-color: $lime-green;
+$text-color: $dark-gray;
+$secondary-color: $cyan;
+
+
 //BUTTON COLORS
+$color-default: $cyan;
+$color-success: $emerald;
+$color-error: $bright-pink;
+$color-warning: $tomato;
+$color-info: $magenta;
+
+
+//GRID COLORS 
+	//grid-12:$soft-blue,
+	//grid-8: $soft-orange,
+	//grid-7: $pink,
+	//grid-6: $pure-blue,
+	//grid-5: $emerald,
+	//grid-4: $cyan,
+	//grid-3: $soft-purple,
+
+
+// Text
+$base__font-size: 16px;
+$base__line: 24px;
+
+$g-col-width      : 65px;
+$g-gutter-width   : 20px;
+$g-col-count      : 12;
+$g-count-max-w    : 1050px;

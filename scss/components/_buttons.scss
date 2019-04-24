@@ -1,9 +1,23 @@
-/* Button styling 
-
-    .btn--default
-    .btn--success
-    .btn--error
-    .btn--warning
-    .btn--info
-    .theme__colors
-    */
+.btn {
+  @extend %btn;
+  @include m(default) {
+    @extend %btn;
+    background-color: $color-default;
+  }
+  @include m(success) {
+    @extend %btn;
+    background-color: $color-success;
+  }
+  @include m(error) {
+    @extend %btn;
+    background-color: $color-error;
+  }
+  @include m(warning) {
+    @extend %btn;
+    background-color: $color-warning;
+  }
+  @include m(info) {
+    @extend %btn;
+    background-color: $color-info;
+  }
+}

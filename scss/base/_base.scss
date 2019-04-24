@@ -1,18 +1,37 @@
+@import "utilities/variables";
+
 //the universal selector (*)
 //ul elements
 //p elements
 //a elements
 
 * {
-	box-sizing: border-box;
+  font-size:16px;
+  font-family: $primary-font;
+  line-height: 24px;
+  box-sizing: border-box;
 }
 
 ul {
-	list-style-type: none;
+  list-style: none;
+  text-align: center;
+  padding-left: 0;
+  @include mq($brk-tablet) {
+    display: flex;
+    justify-content: flex-end;
+  }
 }
 
 p {
-	font-size: 1em;
-	line-height: 1.5;
-	color: #444;
+  color: $text-color;
+}
+
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 1.5em;
+}
+
+.centered {
+  @extend %centered;
 }

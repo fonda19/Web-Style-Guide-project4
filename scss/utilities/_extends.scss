@@ -1,0 +1,61 @@
+%centered {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: 100%;
+  max-width: $max-width;
+  flex-grow: inherit;
+}
+
+// UI Element Specific Placeholders
+
+%btn {
+  border: none;
+  border-radius: 0.3em;
+  color: #FFF;
+  text-transform: uppercase;
+  font-weight:700;
+  width: 100%;
+  margin: 1em 0;
+  padding: 1.5em 0em;
+  @include mq($brk-tablet) {
+    width: auto;
+    padding: 1.5em 2em;
+  }
+  @include mq($brk-desktop) {
+    width: 15%;
+  }
+}
+
+%input {
+  border-bottom: 8px $primary-color solid;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  width: 100%;
+  max-width: -webkit-fill-available;
+  padding: 1em 0.5em;
+  margin: 1em 0;
+  &:hover {
+    border-bottom: 8px lighten($primary-color, 10%) solid;
+  }
+}
+
+%nav-item {
+  padding: 1em 0;
+  border-radius: 0.5em;
+  text-decoration: none;
+  @include mq($brk-tablet) {
+    padding: 1em;
+  }
+}
+
+%link {
+  font-weight: 900;
+  color: $primary-color;
+  text-decoration: none;
+}
+
+%images {
+  width: 12em;
+  display: block;
+}

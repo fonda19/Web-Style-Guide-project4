@@ -1,0 +1,9 @@
+.form__input {
+  @extend %input;
+}
+
+.form__label {
+  @include m(hidden) {
+    display: none;
+  }
+}

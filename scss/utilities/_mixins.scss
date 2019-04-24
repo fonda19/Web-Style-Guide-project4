@@ -1,2 +1,41 @@
-//FLEXBOX SETTING
-//MEDIA QUERY 
+@mixin flex (
+  $disp: flex,
+  $dir: null,
+  $wrap: null,
+  $just: null,
+  $al-items: null) {
+  display: $disp;
+  flex-direction: $dir;
+  flex-wrap: $wrap;
+  justify-content: $just;
+}
+
+@mixin e($element) {
+  &__#{$element} {
+    @content;
+  }
+}
+
+@mixin m($modifier) {
+  &--#{$modifier} {
+    @content;
+  }
+}
+
+// Media Query Mixin 
+@mixin mq($breakpoint) {
+    @media (min-width: $breakpoint) {
+      @content;
+    }
+}
+
+
+// Flexbox mixin
+@mixin flexbox {
+ display:-webkit-box;
+ display:-moz-box;
+ display:-ms-flexbox;
+ display:-webkit-flex;
+ display:flex;
+ @content
+}

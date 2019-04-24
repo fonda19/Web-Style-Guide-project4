@@ -1,0 +1,33 @@
+.headline {
+  @include m(primary) {
+    font-size: 2.5em;
+    line-height: 1.2em;
+    padding-left: 0.5em;
+    font-weight: 900;
+    color: $primary-color;
+  }
+  @include m(secondary) {
+    font-size: 1.25em;
+    color: $text-color;
+    padding: 1em 0;
+    font-weight: normal;
+    margin: 0;
+  }
+}
+
+.link {
+  @extend %link;
+  &:hover{
+    color: $secondary-color;
+  }
+}
+
+.blockquote {
+  border-left: 12px $primary-color solid;
+  padding-left: 1em;
+  border-radius: 0.3em;
+  font-size: 1.4em;
+  font-style: italic;
+  line-height: 1.25em;
+  color: $text-color;
+}

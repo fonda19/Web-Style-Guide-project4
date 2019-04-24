@@ -6,63 +6,54 @@
 // but additional styling may be needed
 // **********************************************
 
-
-// grid base class
-.grid {
-
-  // .grid__row
-  &__row {
-    padding: 1em 10px;
-    display: flex;
-    flex-direction: column;
-
-    // NOTE: replace with media query mixin if aiming for exceeds
-    @media (min-width: 768px) {
-      flex-direction: row;
-    }
-  }
-
-  // .grid__col
-  &__col {
-
-    // create grid columns dynamically
-    // loop through each column size
-    @for $i from 1 through 12 {
-
-      // concatenate CSS selector, ie when $i = 1,
-      // selector would be .grid__col--1
-      &--#{$i} {
-
-        // base styles applied to all grid columns 
-        // NOTE: could be converted to a placeholder, along with margin
-        // from the  media query
-        margin-top: 10px;
-        flex-basis: 100%;
-
-        // NOTE: replace with media query mixin if aiming for exceeds
-        @media (min-width: 768px) {
-
-          // base stlyes applied to all grid columns
-          margin-top: 0;
-
-          // make column width a percentage of the column number / total columns
-          flex-basis: #{$i / 12 * 100 + "%"} ;
-        }
-      }
+.grid__row {
+  margin: 2em 0;
+  @include mq($brk-tablet) {
+    @include flexbox {
+      margin-top: 1em;
+      margin-bottom: 1em;
     }
   }
 }
 
-// targets all elements with classes that begin with grid__col
-[class^=grid__col] {
-  // grid__col + grid__col, targets two sibling columns
-  & + & {
-
-    // NOTE: replace with media query mixin if aiming for exceeds
-    @media (min-width: 768px) {
-
-      // add grid gutter
-      margin-left: 10px;
+// Flex-item loop to assign correct flex-grow property
+@include mq($break-t) {
+  @for $i from 1 through 12 {
+    .grid__col--#{$i} {
+      width: calc(1024px*calc(#{$i}/12));
     }
   }
+}
+
+.theme__colors {
+  margin: 0.5em 0;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  border-radius: 0.5em;
+  text-align: center;
+  @include mq($brk-tablet) {
+    margin-left: 0.25em;
+    margin-right: 0.25em;
+  }
+}
+
+$theme-color-map: (
+  '12': $soft-blue,
+  '6' : $pure-blue,
+  '4' : $cyan,
+  '3' : $soft-purple,
+  '5' : $emerald,
+  '7' : $pink,
+  '8' : $soft-orange
+);
+
+// Looping through each combo of .grid__col--# and .theme__colors to apply a background-color
+@each $col-value, $themecolor in $theme-color-map {
+  .grid__col--#{$col-value}.theme__colors {
+    background-color: $themecolor;
+  }
+}
+
+.grid__col--6.theme__colors {
+  color: #FFF;
 }

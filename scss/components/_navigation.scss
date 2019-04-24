@@ -1,0 +1,17 @@
+.nav {
+  @include e(item) {
+    @extend %nav-item;
+    & > a {
+      color: $text-color;
+      text-decoration: none;
+    }
+    @include m(active) {
+      @extend %nav-item;
+      background-color: $primary-color;
+      & > a {
+        text-decoration: none;
+        color: #FFF;
+      }
+    }
+  }
+}
