@@ -1,23 +1,46 @@
-.btn {
-  @extend %btn;
-  @include m(default) {
-    @extend %btn;
-    background-color: $color-default;
+@import "utilities/extends";
+
+
+
+[class^="btn--"] {
+  width: 100%;
+  padding: em(10px);
+  border-style: none;
+  color: white;
+  border-radius: em(5px);
+  margin-top: em(15px);
+  margin-bottom: em(15px);
+
+
+}
+
+@media (min-width: 768px) {
+  .grid__row:nth-of-type(5) .grid__col--12 {
+    display: flex;
+    justify-content: space-around;
+    & [class^='btn--'] {
+      width: 18%;
+    }
   }
-  @include m(success) {
-    @extend %btn;
-    background-color: $color-success;
-  }
-  @include m(error) {
-    @extend %btn;
-    background-color: $color-error;
-  }
-  @include m(warning) {
-    @extend %btn;
-    background-color: $color-warning;
-  }
-  @include m(info) {
-    @extend %btn;
-    background-color: $color-info;
-  }
+}
+
+
+.btn--default {
+  background-color: $color-default;
+}
+
+.btn--success {
+  background-color: $color-success;
+}
+
+.btn--error {
+  background-color: $color-error;
+}
+
+.btn--warning {
+  background-color: $color-warning;
+}
+
+.btn--info {
+  background-color: $color-info;
 }

@@ -8,7 +8,7 @@
 
 .grid__row {
   margin: 2em 0;
-  @include mq($brk-tablet) {
+  @include mq(tablet) {
     @include flexbox {
       margin-top: 1em;
       margin-bottom: 1em;
@@ -17,7 +17,7 @@
 }
 
 // Flex-item loop to assign correct flex-grow property
-@include mq($break-t) {
+@include mq(tablet) {
   @for $i from 1 through 12 {
     .grid__col--#{$i} {
       width: calc(1024px*calc(#{$i}/12));
@@ -31,7 +31,7 @@
   padding-bottom: 1em;
   border-radius: 0.5em;
   text-align: center;
-  @include mq($brk-tablet) {
+  @include mq(tablet) {
     margin-left: 0.25em;
     margin-right: 0.25em;
   }
@@ -55,5 +55,5 @@ $theme-color-map: (
 }
 
 .grid__col--6.theme__colors {
-  color: #FFF;
+  color: $white;
 }

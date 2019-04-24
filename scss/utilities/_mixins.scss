@@ -22,13 +22,29 @@
   }
 }
 
+@mixin 
+
 // Media Query Mixin 
-@mixin mq($breakpoint) {
-    @media (min-width: $breakpoint) {
-      @content;
+@mixin mq($break) {
+    @if $break == "mobile" {
+        @media (min-width: $brk-mobile) and (max-width: $brk-tablet) {
+            @content;
+        }
+    }
+    @else if $break == "tablet" {
+        @media (min-width: $brk-tablet) {
+            @content;
+        }
+    }
+    @else if $break == "desktop" {
+        @media (min-width: $brk-desktop) {
+            @content;
+        }
+    }
+    @else {
+        @error "No value could be retrieved for #{$break}";
     }
 }
-
 
 // Flexbox mixin
 @mixin flexbox {

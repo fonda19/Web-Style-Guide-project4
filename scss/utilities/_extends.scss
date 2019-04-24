@@ -1,3 +1,5 @@
+@import "utilities/mixins";
+
 %centered {
   margin-left: auto !important;
   margin-right: auto !important;
@@ -11,17 +13,19 @@
 %btn {
   border: none;
   border-radius: 0.3em;
-  color: #FFF;
+  color: $white;
   text-transform: uppercase;
   font-weight:700;
   width: 100%;
   margin: 1em 0;
   padding: 1.5em 0em;
-  @include mq($brk-tablet) {
+  @include mq(mobile) {
     width: auto;
     padding: 1.5em 2em;
+    margin-left: 20px;
+    display: block;
   }
-  @include mq($brk-desktop) {
+  @include mq(desktop) {
     width: 15%;
   }
 }
@@ -44,7 +48,7 @@
   padding: 1em 0;
   border-radius: 0.5em;
   text-decoration: none;
-  @include mq($brk-tablet) {
+  @include mq(tablet) {
     padding: 1em;
   }
 }
